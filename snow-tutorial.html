@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #container{
+        width: 1500px;
+        height: 800px;
+        position: relative;
+        background-size: cover;
+        background-image: url('snowy_forest.jpg');
+    }
+    #snow {
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        background-color: snow;
+    }
+</style>
+<body>
+
+<p>
+    <button onclick="myMove()">Let It Snow!</button>
+</p>
+
+<div id ="container">
+    <div id ="snow"></div>
+</div>
+
+<script>
+    function myMove() {
+        var elem = document.getElementById("snow");
+        var pos = 0;
+        var id = setInterval(frame, 1);
+        function frame() {
+            if (pos == 800) {
+                clearInterval(id);
+            } else {
+                pos++;
+                elem.style.top = pos + 'px';
+                elem.style.left = pos + 'px';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
